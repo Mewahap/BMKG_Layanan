@@ -235,7 +235,6 @@ header label {
 }
 
 .service {
-  width: 100px;
   text-align: center;
   margin: 0 5rem;
 }
@@ -599,11 +598,11 @@ label {
   }
 
   .services {
-    width: 95%;
+    align-items: center;
   }
 
   .service {
-    width: 30rem;
+    width: 100px;
     margin: 0 2rem;
   }
 
