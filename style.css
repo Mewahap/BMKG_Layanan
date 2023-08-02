@@ -28,6 +28,13 @@ html {
   overflow-x: hidden;
 }
 
+marquee {
+  margin-top: 100px;
+  background-color: #0092be;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+}
+
 body {
   background: #f9f9f9;
 }
@@ -35,7 +42,7 @@ body {
 section {
   min-height: 100vh;
   padding: 0 9%;
-  margin-top: 30px;
+  margin-top: 20px;
   padding-top: 7.5rem;
   padding-bottom: 2rem;
 }
@@ -66,7 +73,7 @@ section {
   font-size: 3.5rem;
   text-transform: uppercase;
   padding: 1rem;
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 header {
@@ -96,7 +103,7 @@ header .logo span {
 }
 
 header .logo img {
-  height: 60px; /* Atur ukuran gambar logo sesuai kebutuhan */
+  height: 60px;
   margin-right: 18px;
 }
 
@@ -107,15 +114,15 @@ header .navbar a {
 }
 
 header .navbar a:hover {
-  padding: 5px;
-  border-radius: 20px;
+  padding: 10px;
+  border-radius: 10px;
   background: var(--blue);
   color: #fff;
 }
 
 header .navbar .active {
-  padding: 5px;
-  border-radius: 20px;
+  padding: 10px;
+  border-radius: 12px;
   background: var(--blue);
   color: #fff;
 }
@@ -133,6 +140,7 @@ header label {
 }
 
 .home {
+  margin-top: -95px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -187,18 +195,24 @@ header label {
   border-radius: 1.5rem;
   border: 0.1rem solid rgba(0, 0, 0, 0.2);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-  margin: 1.5rem; /* Add margin here to control spacing between boxes */
-  padding: 2rem; /* Adjust padding as needed */
+  margin: 1.5rem;
+  margin-top: 30px;
+  padding: 2rem;
   text-align: center;
   transition: 0.2s linear;
-  box-sizing: border-box; /* Include padding and border within box dimensions */
+  box-sizing: border-box;
+}
+
+.layanan .box-container .box:hover {
+  box-shadow: 0px 8px 28px rgba(1, 1, 1, 0.15);
+  border-radius: 8px;
 }
 
 .layanan .box-container .box img {
   height: 15rem;
-  width: 100%; /* Ensure the image stretches to fill the container */
-  object-fit: cover; /* Maintain aspect ratio of the image */
-  border-radius: 0.5rem 0.5rem 0 0; /* Rounded corners on the top only */
+  width: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem 0.5rem 0 0;
 }
 
 .layanan .box-container .box h3 {
@@ -213,10 +227,39 @@ header label {
   padding: 1rem 0;
 }
 
+.card {
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  margin-top: 0;
+  font-size: 18px;
+  color: #da082e;
+}
+
+.card p {
+  margin-bottom: 0;
+  color: #555;
+}
+
+.card a {
+  color: #17a2b8;
+  text-decoration: underline;
+  transition: transform 0.3s ease;
+}
+
+.card a:hover {
+  color: #da082e;
+}
 /* Section 2 */
 .section-2 {
   width: 100%;
-  padding: 10rem 0 15rem 0;
+  padding: 1rem 0 15rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -272,6 +315,65 @@ header label {
   cursor: pointer;
 }
 /* End of Section 2 */
+
+/* Section 4 */
+.section-4 {
+  width: 100%;
+  padding: 10rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-4-heading {
+  font-size: 5rem;
+  font-weight: 400;
+  color: #444;
+  margin-bottom: 5rem;
+}
+
+.section-4-content {
+  display: flex;
+}
+
+.section-4-img-wrapper {
+  width: 50rem;
+}
+
+.section-4-img-wrapper img {
+  width: 100%;
+  opacity: 0.8;
+}
+
+.section-4-list {
+  width: 55%;
+  margin-top: 2rem;
+}
+
+.section-4-list-item {
+  font-size: 1.6rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.number {
+  width: 3.5rem;
+  height: 3.5rem;
+  border: 0.1rem solid #555;
+  border-radius: 50%;
+  margin-right: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-4-list-item a {
+  color: #036bb1;
+  font-weight: bold;
+}
+/* End of Section 4 */
 
 .about {
   background: url(./images/about-bg.png) no-repeat;
@@ -334,6 +436,7 @@ header label {
 p,
 label {
   font-size: 15px;
+  text-transform: none;
 }
 
 .contact .image {
@@ -428,6 +531,7 @@ label {
   font-size: 1.5rem;
   padding: 0.5rem 0;
   color: #eee;
+  text-transform: none;
 }
 
 .footer .box-container .box a {
@@ -494,8 +598,7 @@ label {
   border: 2px solid #fff;
 }
 
-/* media queries  */
-
+/* Responsive */
 @media (max-width: 1200px) {
   html {
     font-size: 55%;
@@ -588,7 +691,11 @@ label {
   }
 
   .section-2 {
-    padding: 10rem 0;
+    padding: 5rem 0;
+  }
+
+  .section-4 {
+    padding: 5rem 0;
   }
 
   .section-2-heading {
@@ -615,3 +722,46 @@ label {
     padding: 1rem;
   }
 }
+
+@media (max-width: 1000px) {
+  .section-4-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section-4-img-wrapper {
+    margin: auto;
+  }
+
+  .section-4-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 550px) {
+  .section-4 {
+    padding: 5rem 0;
+  }
+
+  .section-4-heading {
+    font-size: 3rem;
+  }
+
+  .section-4-content {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .section-4-img-wrapper {
+    display: none;
+  }
+
+  .section-4-list {
+    align-items: flex-start;
+  }
+}
+
+/* End of Responsive */
