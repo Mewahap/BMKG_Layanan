@@ -244,6 +244,7 @@ header label {
 
 .card p {
   margin-bottom: 0;
+  font-size: 15px;
   color: #555;
 }
 
@@ -256,6 +257,97 @@ header label {
 .card a:hover {
   color: #da082e;
 }
+
+.aksi {
+  position: relative;
+  max-width: 700px;
+  width: 100%;
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+.aksi h1 {
+  font-size: 2.5rem;
+  color: #0092be;
+  font-weight: bold;
+  text-align: center;
+}
+.aksi .form {
+  margin-top: 30px;
+}
+.form .input-box {
+  width: 100%;
+  margin-top: 20px;
+}
+.input-box label {
+  color: #333;
+}
+.form :where(.input-box input, .select-box) {
+  position: relative;
+  text-transform: none;
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 1.5rem;
+  color: #707070;
+  margin-top: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0 15px;
+}
+.input-box input:focus {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.input-box textarea {
+  position: relative;
+  height: 120px; /* Set the height of the textarea */
+  width: 100%;
+  outline: none;
+  font-size: 1.5rem;
+  color: #707070;
+  margin-top: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px 15px; /* Adjust the padding for the text area */
+  resize: vertical; /* Allow vertical resizing */
+}
+
+.input-box textarea:focus {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.form button {
+  height: 55px;
+  width: 100%;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-top: 30px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: rgb(130, 106, 251);
+}
+.form button:hover {
+  background: rgb(88, 56, 250);
+}
+
+.close {
+  color: #aaa;
+  float: center;
+  font-size: 30px;
+  cursor: pointer;
+  margin-left: 62rem;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+}
+
 /* Section 2 */
 .section-2 {
   width: 100%;
@@ -423,8 +515,8 @@ header label {
   justify-content: center;
   flex-wrap: wrap;
   padding-bottom: 4rem;
+  font-size: 15px;
 }
-
 .contact h1 {
   font-size: 30px;
   margin-top: 20px;
@@ -432,20 +524,14 @@ header label {
   color: #17a2b8;
 }
 
-.contact span,
-p,
-label {
+.contact .form-floating input {
   font-size: 15px;
   text-transform: none;
 }
 
-.contact .image {
-  flex: 1 1 40rem;
-}
-
-.contact .image img {
-  width: 100%;
-  padding: 2rem;
+.contact .form-floating textarea {
+  font-size: 15px;
+  color: black;
 }
 
 .contact form {
@@ -455,51 +541,13 @@ label {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
   background: #fff;
+  font-size: 15px;
 }
 
-.contact form .heading {
-  text-align: left;
-  padding: 0;
-  padding-bottom: 2rem;
-}
-
-.contact form .inputBox {
-  position: relative;
-}
-
-.contact form .inputBox input,
-.contact form .inputBox textarea {
-  width: 100%;
-  background: none;
+.contact p {
   color: #666;
-  margin: 1.5rem 0;
-  padding: 0.5rem 0;
-  font-size: 1.7rem;
-  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
-  text-transform: none;
-}
-
-.contact form .inputBox textarea {
-  resize: none;
-  height: 13rem;
-}
-
-.contact form .inputBox label {
-  position: absolute;
-  top: 1.7rem;
-  left: 0;
-  font-size: 1.7rem;
-  color: #666;
-  transition: 0.2s linear;
-}
-
-.contact form .inputBox input:focus ~ label,
-.contact form .inputBox input:valid ~ label,
-.contact form .inputBox textarea:focus ~ label,
-.contact form .inputBox textarea:valid ~ label {
-  top: -0.5rem;
-  font-size: 1.5rem;
-  color: var(--pink);
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .footer {
@@ -764,4 +812,11 @@ label {
   }
 }
 
-/* End of Responsive */
+@media screen and (max-width: 500px) {
+  .form .column {
+    flex-wrap: wrap;
+  }
+  .form :where(.gender-option, .gender) {
+    row-gap: 15px;
+  }
+}

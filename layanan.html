@@ -16,6 +16,31 @@
     />
     <!-- custom css file link  -->
     <link rel="stylesheet" href="style.css" />
+
+    <style>
+
+      /* Style the modal */
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgba(0, 0, 0, 0.4); /* Black with opacity */
+      }
+
+      /* Style the contact form within the modal */
+      .modal .aksi {
+        background-color: white;
+        margin: 15% auto; /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on screen size */
+      }
+    </style>
   </head>
   <body>
     <!-- header section starts  -->
@@ -43,8 +68,40 @@
         <h3>Pemberitahuan Penting!</h3>
         <p>
           Ini adalah pemberitahuan penting yang harus Anda perhatikan. Bapak ibu yang terhormat silahkan konfirmasi ulang anda untuk Permohonan Permintaan Data. Jangan lupa lengkapi data anda agar kami dapat merespon dengan baik. Silakan
-          <a href="aksi.html">Klik Disini</a>.
+          <a href="#" onclick="openModal()">Klik Disini</a>.
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+          <section class="aksi" id="aksi">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h1>Konfirmasi Form</h1>
+            <div class="contactform">
+              <form action="" class="form">
+                <div class="input-box">
+                  <label>Nama Lengkap</label>
+                  <input type="text" id="name" placeholder="Masukkan Nama Anda" required />
+                </div>
+
+                <div class="input-box">
+                  <label>Nomor</label>
+                  <input type="text" id="mobile" placeholder="Masukkan Nomor Anda" required />
+                </div>
+
+                <div class="input-box">
+                  <label>Email</label>
+                  <input type="text" id="email" placeholder="Masukkan Email Anda" required />
+                </div>
+                
+                <div class="input-box">
+                  <label>Pesan</label>
+                  <textarea name="pesan" id="message" cols="30" rows="10" placeholder="Masukkan Pesan Anda"></textarea>
+                </div>
+                <button type="button" onclick="whatsapp()" value="send enquiry">Submit</button>
+              </form>
+            </div>
+          </section>
+        </div>
         </p>
+        
       </div>
       <div style="border: 0.5px solid #bfbfbf"></div>
       <div class="box-container">
@@ -157,7 +214,37 @@
       <h1 class="credit">&copy; copyright 2023 by <a href="https://bmkgtegal.info/index.html">BMKG Kota Tegal</a></h1>
       <br /><br />
     </div>
-
     <!-- footer section ends -->
+
+    <script>
+      function openModal() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "block";
+      }
+
+      function closeModal() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none";
+      }
+
+      function whatsapp() {
+        var name = document.getElementById("name").value;
+        var mobile = document.getElementById("mobile").value.replace(/\s+/g, ""); // Remove spaces from mobile number
+        var email = document.getElementById("email").value;
+        var message = document.getElementById("message").value;
+
+        var whatsappurl = "https://wa.me/+6287717608230?text=" + "Nama: " + name + "%0a" + "Nomor Telp: " + mobile + "%0a" + "Email: " + email + "%0a" + "Pesan: " + message;
+
+        window.open(whatsappurl, "_blank").focus();
+      }
+
+      // Close the modal if the user clicks anywhere outside of it
+      window.onclick = function (event) {
+        var modal = document.getElementById("myModal");
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+    </script>
   </body>
 </html>

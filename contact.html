@@ -93,36 +93,49 @@
               ></iframe>
             </div>
             <div class="col-md-6">
-              <div class="wow fadeInUp" data-wow-delay="0.5s">
                 <form>
                   <p style="text-align: center">Silahkan hubungi kami jika ada kendala</p>
                   <div class="row g-3">
-                    <div class="col-md-6">
-                      <div class="form-floating">
-                        <input type="text" class="form-control" id="name" placeholder="Your Name" />
-                        <label for="name">Your Name</label>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-floating">
-                        <input type="email" class="form-control" id="email" placeholder="Your Email" />
-                        <label for="email">Your Email</label>
-                      </div>
-                    </div>
+
                     <div class="col-12">
                       <div class="form-floating">
-                        <input type="text" class="form-control" id="subject" placeholder="Phone" />
-                        <label for="subject">Phone</label>
+                        <div class="mb-3">
+                          <label for="exampleFormControlInput1" class="form-label">Nama</label>
+                          <input type="text" id="name" class="form-control"  placeholder="masukkan nama">
+                        </div>
                       </div>
                     </div>
+
                     <div class="col-12">
                       <div class="form-floating">
-                        <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
-                        <label for="message">Message</label>
+                        <div class="mb-3">
+                          <label for="exampleFormControlInput1" class="form-label">Nomor</label>
+                          <input type="text" id="mobile" class="form-control"  placeholder="masukkan nomor">
+                        </div>
                       </div>
                     </div>
+
                     <div class="col-12">
-                      <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                      <div class="form-floating">
+                        <div class="mb-3">
+                          <label for="exampleFormControlInput1" class="form-label">Email</label>
+                          <input type="email" id="email" class="form-control"  placeholder="masukkan email">
+                        </div>
+                      </div>
+                    </div>
+                  
+
+                    <div class="col-12">
+                      <div class="form-floating">
+                        <div class="mb-3">
+                          <label for="exampleFormControlTextarea1" class="form-label">Pesan</label>
+                          <textarea id="message" class="form-control"  rows="3" placeholder="pesan"></textarea>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <button onclick="whatsapp()" class="btn btn-primary w-100 py-3" type="button">Send Message</button>
                     </div>
                   </div>
                 </form>
@@ -204,6 +217,27 @@
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <script>
+      function whatsapp() {
+        var name = document.getElementById("name").value;
+        var mobile = document.getElementById("mobile").value.replace(/\s+/g, ""); // Remove spaces from mobile number
+        var email = document.getElementById("email").value;
+        var message = document.getElementById("message").value;
+
+        var whatsappurl = "https://wa.me/+6287717608230?text=" + "Nama: " + name + "%0a" + "Nomor Telp: " + mobile + "%0a" + "Email: " + email + "%0a" + "Pesan: " + message;
+
+        window.open(whatsappurl, "_blank").focus();
+      }
+
+      // Close the modal if the user clicks anywhere outside of it
+      window.onclick = function (event) {
+        var modal = document.getElementById("myModal");
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+    </script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>

@@ -20,7 +20,7 @@
   <body>
     <!-- header section starts  -->
 
-    <header>
+    <!-- <header>
       <a href="index.html" class="logo"><img src="images/logo.png" alt="" /> <span>Stasiun Meteorologi Maritim Tegal</span></a>
 
       <input type="checkbox" id="menu-bar" />
@@ -33,16 +33,26 @@
         <a href="aksi.html" class="active">aksi</a>
         <a href="contact.html">contact</a>
       </nav>
-    </header>
+    </header> -->
 
     <!-- header section ends -->
 
     <!-- aksi section starts  -->
-    <section class="aksi" id="aksi"></section>
+    <section class="aksi" id="aksi">
+      <div class="contactform">
+        <form action="">
+          <input type="text" id="name" placeholder="enter your name" /><br />
+          <input type="text" id="mobile" placeholder="mobile number" /><br />
+          <input type="text" id="email" placeholder="email id" /><br />
+          <textarea id="message" cols="25" rows="5"></textarea><br />
+          <input type="button" onclick="whatsapp()" value="send enquiry" /><br />
+        </form>
+      </div>
+    </section>
     <!-- aksi section ends -->
 
     <!-- footer section starts  -->
-    <div class="footer">
+    <!-- <div class="footer">
       <div class="box-container">
         <div class="box">
           <h3>about us</h3>
@@ -100,7 +110,22 @@
 
       <h1 class="credit">&copy; copyright 2023 by <a href="https://bmkgtegal.info/index.html">BMKG Kota Tegal</a></h1>
       <br /><br />
-    </div>
+    </div> -->
     <!-- footer section ends -->
+
+    <!-- script wa start -->
+    <script>
+      function whatsapp() {
+        var name = document.getElementById("name").value;
+        var mobile = document.getElementById("mobile").value.replace(/\s+/g, ""); // Remove spaces from mobile number
+        var email = document.getElementById("email").value;
+        var message = document.getElementById("message").value;
+
+        var whatsappurl = "https://wa.me/+6287717608230?text=" + "name of customer: " + name + "%0a" + "mobile no: " + mobile + "%0a" + "email id: " + email + "%0a" + "message: " + message;
+
+        window.open(whatsappurl, "_blank").focus();
+      }
+    </script>
+    <!-- script wa end -->
   </body>
 </html>
