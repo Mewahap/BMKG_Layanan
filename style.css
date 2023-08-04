@@ -248,7 +248,7 @@ header label {
   color: #555;
 }
 
-.card a {
+/* .card a {
   color: #17a2b8;
   text-decoration: underline;
   transition: transform 0.3s ease;
@@ -256,7 +256,7 @@ header label {
 
 .card a:hover {
   color: #da082e;
-}
+} */
 
 .aksi {
   position: relative;
@@ -419,7 +419,7 @@ header label {
 }
 
 .section-4-heading {
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: 400;
   color: #444;
   margin-bottom: 5rem;
@@ -441,6 +441,7 @@ header label {
 .section-4-list {
   width: 55%;
   margin-top: 2rem;
+  text-align: justify;
 }
 
 .section-4-list-item {
@@ -504,6 +505,7 @@ header label {
   font-size: 1.5rem;
   color: #666;
   padding: 1rem 0;
+  text-align: justify;
 }
 
 .about .column .content .buttons a:last-child {
@@ -523,6 +525,10 @@ header label {
   margin-top: 20px;
   font-weight: bold;
   color: #17a2b8;
+}
+
+.contact span {
+  text-transform: none;
 }
 
 .contact .form-floating input {
@@ -786,7 +792,6 @@ header label {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
 }
 
