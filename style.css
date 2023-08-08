@@ -427,6 +427,7 @@ header label {
 
 .section-4-content {
   display: flex;
+  margin-left: 100px;
 }
 
 .section-4-img-wrapper {
